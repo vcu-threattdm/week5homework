@@ -1,31 +1,56 @@
 """Homework file for my students to have fun with some algorithms! """
-"""Test cases are important."""
 
 
-def test_greatest_number():
-    """Quick test to see if you can find the largest number in a list."""
-    assert homework.find_greatest_number([1, 2, 3, 4, 5, 6, 7, 8]) == 8
-    assert homework.find_greatest_number([7, 3, 21, 4, 1, 6]) == 21
+def find_greatest_number(incoming_list):
+    """
+    Required parameter, incoming_list, should be a list.
+    Find the largest number in the list.
+    """
+    retval = max(incoming_list)
+    return retval
 
 
-def test_least_number():
-    """Quick test to see if you can find the smallest number in a list."""
-    assert homework.find_least_number([1, 2, 3, 4, 5, 6, 7, 8]) == 1
-    assert homework.find_least_number([8, 7, 3, 2, 4, 1, 6]) == 1
+def find_least_number(incoming_list):
+    """
+    Required parameter, incoming_list, should be a list.
+    Find the smallest/least number in the list.
+    """
+    retval = min(incoming_list)
+    return retval
 
 
-def test_sum_of_list():
-    """Quick test to see if you can add together all the numbers in a list."""
-    assert homework.add_list_numbers([1, 2, 3, 4]) == 10
-    assert homework.add_list_numbers([]) == 0
-    assert homework.add_list_numbers(None) == 0
+def add_list_numbers(incoming_list):
+    """
+    Required parameter, incoming_list, should be a list.
+    Add all the values together and return it.
+    """
+
+   if incoming_list:
+    retval = sum(incoming_list)
+   else:
+    retval = 0
+   return retval
 
 
-def test_key_with_the_longest_value():
-    """A little trickier.   Which KEY has the 'longest' value associated with it? """
-
-    assert (
-        homework.longest_value_key({"dog": "cat", "a": "asdfasdfasdfasdfasdf"}) == "a"
-    )
-    assert homework.longest_value_key({}) is None
-    assert homework.longest_value_key(None) is None
+def longest_value_key(incoming_dict):
+    """
+    Required parameter, incoming_dict, should be a dict.
+    Find the KEY that has a value with the highest length, use the len() function
+    """
+    
+    if not incoming_dict:
+        return none
+    
+    all_keys = incoming_dict.keys()
+    if not all_keys:
+        return none
+    
+    keys_with_longest_value = none
+    for key in all_keys:
+        if not key_with_longest_value:
+            key_with_longest_value = key
+            
+        if len(incoming_dict[key]) > len(incoming_dict[key_with_longest_value]):
+            key_with_longest_value = key
+     return key_with_longest_value
+    
